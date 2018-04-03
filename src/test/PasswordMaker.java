@@ -2,7 +2,7 @@ package test;
 
 import app.Dictionary;
 
-import javax.swing.text.AttributeSet;
+import javax.swing.text.AttributeSet;  // don't need this.
 
 public class PasswordMaker {
 
@@ -13,11 +13,11 @@ public class PasswordMaker {
         String randWord1 = Dictionary.getRandomWord();
         String randchar = randWord.charAt(0) + blank;
         String L1 = randchar.toUpperCase();
-            Dictionary.getRandomWord();
+            Dictionary.getRandomWord();  // This word isn't saved, i.e. these 2 lines don't do anything :-)
 
             Dictionary.getRandomWord();
 
-        if (randWord.length() + randWord1.length() >= 8) {
+        if (randWord.length() + randWord1.length() >= 8) { // Great, but doesn't work for words under 8 chars. Can you think of how to get a new word if this one is too short?
 
             randWord = randWord.replace("a", "4");
             randWord = randWord.replace("e", "3");
@@ -31,7 +31,7 @@ public class PasswordMaker {
             randWord1 = randWord1.replace("o", "0");
             randWord1 = randWord1.replace("u", "6");
 
-            randWord = randWord.replaceFirst(randchar, L1);
+            randWord = randWord.replaceFirst(randchar, L1);  // Good
 
             System.out.println(randWord + randWord1);
         }
